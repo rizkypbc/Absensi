@@ -13,17 +13,19 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="71dp"
         android:orientation="vertical">
+
 
         <TextView
             android:id="@+id/greeting"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textSize="48sp"
-            android:textColor="@color/colorText" />
+            android:textColor="@color/colorText"
+            android:textSize="30sp" />
 
 
         <TextView
@@ -36,18 +38,34 @@
     </LinearLayout>
 
     <LinearLayout
-        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true">
+        android:layout_centerHorizontal="true"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btnGetLocation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/btn_background_2"
+            android:text="Cek Lokasi"
+            android:textColor="@color/colorWhite" />
+
+        <Button
+            android:id="@+id/btnAbsen"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="Absen" />
 
         <Button
             android:id="@+id/btn_logout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/logout"
             android:background="@drawable/btn_background_2"
+            android:text="@string/logout"
             android:textColor="@color/colorWhite"/>
 
     </LinearLayout>

@@ -18,7 +18,9 @@ public class PrefUtilDosen {
 
     public static SharedPreferences getSharedPreferenceDosen(Context context){
 
-        return PreferenceManager.getDefaultSharedPreferences(context);
+//        return PreferenceManager.getDefaultSharedPreferences(context);
+        // Create another pref login for user
+        return context.getSharedPreferences("OtherPrefs", Context.MODE_PRIVATE);
     }
 
     public static void putDosen(Context context, String key, Dosen dosen){
@@ -46,7 +48,7 @@ public class PrefUtilDosen {
         return getSharedPreferenceDosen(context).getString(key, null);
     }
 
-    public static void clear(Context context){
+    public static void clearDosen(Context context) {
 
         getSharedPreferenceDosen(context).edit().clear().apply();
     }
