@@ -1,26 +1,33 @@
 package skripsi.rizky.absensi.util;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 
 import com.google.gson.Gson;
 
+import skripsi.rizky.absensi.MainActivity;
 import skripsi.rizky.absensi.model.Dosen;
 
 /**
  * Created by ASUS on 15/07/2017.
  */
 
-public class PrefUtilDosen {
+public class
+PrefUtilDosen {
 
     public static final String DOSEN_SESSION = "dosen_session";
+
+    public PrefUtilDosen(MainActivity mainActivity) {
+    }
 
     public static SharedPreferences getSharedPreferenceDosen(Context context){
 
 //        return PreferenceManager.getDefaultSharedPreferences(context);
         // Create another pref login for user
         return context.getSharedPreferences("OtherPrefs", Context.MODE_PRIVATE);
+
     }
 
     public static void putDosen(Context context, String key, Dosen dosen){

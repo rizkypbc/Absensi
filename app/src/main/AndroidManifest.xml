@@ -31,7 +31,9 @@
         <activity
             android:name=".LoginMahasiswaActivity"
             android:parentActivityName=".MainActivity" />
-        <activity android:name=".MahasiswaActivity" />
+        <activity
+            android:name=".AbsenMahasiswaActivity"
+            android:parentActivityName=".HalamanMahasiswa" />
         <activity
             android:name=".LoginDosenActivity"
             android:parentActivityName=".MainActivity" />
@@ -40,7 +42,8 @@
             android:launchMode="singleTop"
             android:parentActivityName=".LoginDosenActivity"
             android:windowSoftInputMode="adjustPan" />
-        <activity android:name=".DosenActivity"></activity>
+        <activity android:name=".DosenActivity" />
+        <activity android:name=".HalamanMahasiswa" />
     </application>
 
 </manifest>

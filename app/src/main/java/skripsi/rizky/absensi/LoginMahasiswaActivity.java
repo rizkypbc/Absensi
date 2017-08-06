@@ -46,7 +46,7 @@ public class LoginMahasiswaActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         if (isSessionLoginMahasiswa()){
-            MahasiswaActivity.start(this);
+            HalamanMahasiswa.start(this);
             LoginMahasiswaActivity.this.finish();
         }
 
@@ -102,7 +102,7 @@ public class LoginMahasiswaActivity extends AppCompatActivity {
                 if (mahasiswa != null){
                     if (!mahasiswa.isError()){
                         PrefUtilMahasiswa.putMahasiswa(LoginMahasiswaActivity.this, PrefUtilMahasiswa.MAHASISWA_SESSION, mahasiswa);
-                        MahasiswaActivity.start(LoginMahasiswaActivity.this);
+                        HalamanMahasiswa.start(LoginMahasiswaActivity.this);
                         LoginMahasiswaActivity.this.finish();
                     }
 

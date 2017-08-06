@@ -10,4 +10,12 @@
     <string name="nama">Nama</string>
     <string name="logout">Logout</string>
     <string name="greeting">Hi, %s :)</string>
+
+    <string-array name="kelas">
+        <item>405</item>
+        <item>405</item>
+        <item>407</item>
+        <item>411/A</item>
+        <item>411/B</item>
+    </string-array>
 </resources>

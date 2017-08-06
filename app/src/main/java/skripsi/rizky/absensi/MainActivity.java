@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import skripsi.rizky.absensi.util.PrefUtilDosen;
+
 public class MainActivity extends AppCompatActivity {
 
 
@@ -22,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 Intent mahasiswa = new Intent(getApplicationContext(), LoginMahasiswaActivity.class);
                 startActivity(mahasiswa);
             }
