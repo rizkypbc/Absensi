@@ -11,10 +11,12 @@
     tools:context=".DosenActivity">
 
     <LinearLayout
+        android:id="@+id/linearLayout3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="50dp"
         android:orientation="vertical">
 
         <TextView
@@ -22,34 +24,53 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textSize="48sp"
-            android:textColor="@color/colorText" />
+            android:textColor="@color/colorText"
+            android:textSize="48sp" />
 
 
         <TextView
             android:id="@+id/nip"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textAlignment="center"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textColor="@color/colorText" />
 
     </LinearLayout>
 
     <LinearLayout
-        android:orientation="vertical"
+        android:id="@+id/layout_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true">
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/linearLayout3"
+        android:layout_marginTop="28dp"
+        android:orientation="horizontal">
 
-        <Button
+
+        <ImageView
+            android:id="@+id/btn_sesi"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginLeft="20dp"
+            android:src="@drawable/sesi" />
+
+        <ImageView
             android:id="@+id/btn_logout_dosen"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/logout"
-            android:background="@drawable/btn_background_2"
-            android:textColor="@color/colorWhite"/>
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginLeft="70dp"
+            android:src="@drawable/logout" />
+
 
     </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_list_sesi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/layout_btn"
+        android:layout_marginTop="10dp"
+        android:text="List Sesi" />
 
 </RelativeLayout>

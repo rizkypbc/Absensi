@@ -44,6 +44,10 @@
             android:windowSoftInputMode="adjustPan" />
         <activity android:name=".DosenActivity" />
         <activity android:name=".HalamanMahasiswa" />
+        <activity android:name=".MataKuliah" />
+        <activity android:name=".BukaSesi" />
+        <activity android:name=".ListSesi" />
+        <activity android:name=".UpdateSesi"></activity>
     </application>
 
 </manifest>
