@@ -36,17 +36,17 @@ public class HalamanMahasiswa extends AppCompatActivity {
         greeting = (TextView) findViewById(R.id.greeting);
         nim = (TextView) findViewById(R.id.nim);
         btnLogout = (ImageView) findViewById(R.id.btn_logout);
-        btnAbsensi = (ImageView) findViewById(R.id.btn_absensi);
-
+        btnAbsensi = (ImageView) findViewById(R.id.btn_list_kelas);
 
         btnAbsensi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                Intent absensi = new Intent(getApplicationContext(), AbsenMahasiswaActivity.class);
-                startActivity(absensi);
+                Intent kelas = new Intent(getApplicationContext(), ListKelas.class);
+                startActivity(kelas);
             }
         });
+
 
         Mahasiswa mahasiswa = PrefUtilMahasiswa.getMahasiswa(this, PrefUtilMahasiswa.MAHASISWA_SESSION);
 

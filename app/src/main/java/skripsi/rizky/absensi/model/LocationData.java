@@ -12,10 +12,20 @@ public class LocationData {
     private String kelas;
     private double latitude;
     private double longitude;
+    private String id_sesi;
 
     public LocationData() {
 
     }
+
+    public String getId_sesi() {
+        return id_sesi;
+    }
+
+    public void setId_sesi(String id_sesi) {
+        this.id_sesi = id_sesi;
+    }
+
 
     public String getNim() {
         return nim;

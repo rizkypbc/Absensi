@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.test.mock.MockPackageManager;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
@@ -20,6 +21,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 import skripsi.rizky.absensi.model.BaseResponse;
 import skripsi.rizky.absensi.model.Mahasiswa;
+import skripsi.rizky.absensi.model.SesiData;
 import skripsi.rizky.absensi.network.GetLocationMahasiswaService;
 import skripsi.rizky.absensi.util.PrefUtilMahasiswa;
 
@@ -34,6 +36,7 @@ public class AbsenMahasiswaActivity extends AppCompatActivity {
     private Spinner spnKelas;
     private RadioGroup radioJurusanGroup;
     private RadioButton radioJurusanButton;
+    private EditText pilihSesi;
 
 
     public static void start(Context context){
@@ -65,9 +68,19 @@ public class AbsenMahasiswaActivity extends AppCompatActivity {
         radioJurusanGroup = (RadioGroup) findViewById(R.id.radioJurusan);
         spnKelas = (Spinner) findViewById(R.id.spnKelas);
         btnAbsensi = (Button) findViewById(R.id.btnAbsen);
+        pilihSesi = (EditText) findViewById(R.id.pilihSesi);
+
+        pilihSesi.setEnabled(false);
         btnAbsensi.setEnabled(false);
 
         btnGetLocation = (Button) findViewById(R.id.btnGetLocation);
+
+        if (getIntent().getSerializableExtra("kelas") != null) {
+
+            SesiData sesiData = (SesiData) getIntent().getSerializableExtra("kelas");
+            pilihSesi.setText(sesiData.getId_sesi());
+
+        }
 
 
 //        btnGetLocation.setVisibility(View.INVISIBLE);
@@ -117,10 +130,11 @@ public class AbsenMahasiswaActivity extends AppCompatActivity {
                                 radioJurusanButton = (RadioButton) findViewById(selectedId);
                                 String jurusan = radioJurusanButton.getText().toString();
 
+                                String pilihKelas = pilihSesi.getText().toString();
                                 String kelas = spnKelas.getSelectedItem().toString();
 
                                 getLocationMahasiswaService = new GetLocationMahasiswaService(getApplicationContext());
-                                getLocationMahasiswaService.doGetLocationMahasiswa(nimMahasiswa, namaMahasiswa, jurusan, kelas, latitude, longitude, new Callback() {
+                                getLocationMahasiswaService.doGetLocationMahasiswa(nimMahasiswa, namaMahasiswa, jurusan, kelas, latitude, longitude, pilihKelas, new Callback() {
 
                                     @Override
                                     public void onResponse(Call call, Response response) {

@@ -45,9 +45,21 @@
         <activity android:name=".DosenActivity" />
         <activity android:name=".HalamanMahasiswa" />
         <activity android:name=".MataKuliah" />
-        <activity android:name=".BukaSesi" />
-        <activity android:name=".ListSesi" />
-        <activity android:name=".UpdateSesi"></activity>
+        <activity
+            android:name=".BukaSesi"
+            android:parentActivityName=".DosenActivity" />
+        <activity
+            android:name=".UpdateSesi"
+            android:label="Tutup Sesi"
+            android:parentActivityName=".ListSesi"></activity>
+        <activity
+            android:name=".ListSesi"
+            android:label="List Sesi"
+            android:parentActivityName=".DosenActivity" />
+        <activity
+            android:name=".ListKelas"
+            android:label="List Kelas"
+            android:parentActivityName=".HalamanMahasiswa"></activity>
     </application>
 
 </manifest>

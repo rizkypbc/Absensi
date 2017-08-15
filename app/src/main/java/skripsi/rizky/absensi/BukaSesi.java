@@ -21,12 +21,12 @@ import skripsi.rizky.absensi.util.PrefUtilDosen;
 
 public class BukaSesi extends AppCompatActivity {
 
-    final static String API_MATAKULIAH = "http://10.223.215.101/absensi/MataKuliah/mataKuliah.php";
+    final static String API_MATAKULIAH = "http://192.168.43.212/absensi/MataKuliah/mataKuliah.php";
 
     private BukaSesiService bukaSesiService;
     private Spinner spnMatkul, spnStatus;
     private Button btnBukaKelas;
-    private EditText txtMateri;
+    private EditText txtMateri, txtIdSesi;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,11 +37,18 @@ public class BukaSesi extends AppCompatActivity {
         spnMatkul = (Spinner) findViewById(R.id.spnMatKul);
         btnBukaKelas = (Button) findViewById(R.id.btnBukaSesi);
         txtMateri = (EditText) findViewById(R.id.txtMateri);
+        txtIdSesi = (EditText) findViewById(R.id.txtIdSesi);
 
         btnBukaKelas.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
+                String idSesi = txtIdSesi.getText().toString();
+
+                if (TextUtils.isEmpty(idSesi)) {
+                    txtIdSesi.setError("Kode Sesi tidak boleh kosong");
+                    return;
+                }
 
                 String materi = txtMateri.getText().toString();
 
@@ -53,11 +60,12 @@ public class BukaSesi extends AppCompatActivity {
                 Dosen dosen = PrefUtilDosen.getDosen(getApplicationContext(), PrefUtilDosen.DOSEN_SESSION);
                 String namaDosen = dosen.getDosenData().getNama();
 
+
                 String matkul = spnMatkul.getSelectedItem().toString();
                 String keterangan = spnStatus.getSelectedItem().toString();
 
                 bukaSesiService = new BukaSesiService(getApplicationContext());
-                bukaSesiService.doBukaSesi(materi, namaDosen, keterangan, matkul, new Callback() {
+                bukaSesiService.doBukaSesi(idSesi, materi, namaDosen, keterangan, matkul, new Callback() {
                     @Override
                     public void onResponse(Call call, Response response) {
 

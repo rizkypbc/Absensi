@@ -6,7 +6,7 @@ package skripsi.rizky.absensi.network.config;
 
 public class Config {
 
-    public static final String BASE_URL = "http://10.223.215.101";
+    public static final String BASE_URL = "http://192.168.43.212";
 
     public static final String API_URL = BASE_URL + "/absensi";
 
@@ -22,5 +22,6 @@ public class Config {
 
     public static final String API_BUKA_SESI = API_URL + "/bukaSesi.php";
 
+    public static final String API_TUTUP_SESI = API_URL + "/UpdateSesi.php";
 
 }
