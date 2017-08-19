@@ -17,7 +17,7 @@ public class DosenActivity extends AppCompatActivity {
     private TextView greetingDosen;
     private TextView nip;
     private ImageView btnLogoutDosen, btnSesi;
-    private Button btnListSesi;
+    private Button btnListSesi, btnListSiswa;
 
 
     public static void start(Context context){
@@ -36,12 +36,21 @@ public class DosenActivity extends AppCompatActivity {
         btnLogoutDosen = (ImageView) findViewById(R.id.btn_logout_dosen);
         btnSesi = (ImageView) findViewById(R.id.btn_sesi);
         btnListSesi = (Button) findViewById(R.id.btn_list_sesi);
+        btnListSiswa = (Button) findViewById(R.id.btn_list_siswa);
 
 
         Dosen dosen = PrefUtilDosen.getDosen(this, PrefUtilDosen.DOSEN_SESSION);
 
         greetingDosen.setText(getResources().getString(R.string.greeting, dosen.getDosenData().getNama()));
         nip.setText(dosen.getDosenData().getNip());
+
+        btnListSiswa.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                startActivity(new Intent(DosenActivity.this, ListAbsen.class));
+            }
+        });
 
         btnListSesi.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -56,6 +56,12 @@
             android:name=".ListSesi"
             android:label="List Sesi"
             android:parentActivityName=".DosenActivity" />
+
+        <activity
+            android:name=".ListAbsen"
+            android:label="List Absen Siswa"
+            android:parentActivityName=".DosenActivity" />
+
         <activity
             android:name=".ListKelas"
             android:label="List Kelas"

@@ -14,6 +14,8 @@ public class ListKelas extends AppCompatActivity {
 
     static String urlAddress = "http://192.168.43.212/absensi/MataKuliah/viewSesi.php";
 
+//    static String urlAddress = "http://10.223.217.154/absensi/MataKuliah/viewSesi.php";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

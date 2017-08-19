@@ -23,6 +23,8 @@ public class BukaSesi extends AppCompatActivity {
 
     final static String API_MATAKULIAH = "http://192.168.43.212/absensi/MataKuliah/mataKuliah.php";
 
+//    final static String API_MATAKULIAH = "http:// 10.223.217.154/absensi/MataKuliah/mataKuliah.php";
+
     private BukaSesiService bukaSesiService;
     private Spinner spnMatkul, spnStatus;
     private Button btnBukaKelas;
