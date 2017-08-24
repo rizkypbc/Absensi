@@ -45,34 +45,17 @@
             android:textColorHint="@color/colorWhite"
             android:theme="@style/WhiteFocus" />
 
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:orientation="vertical">
-
         <Button
             android:id="@+id/loginMahasiswa"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:background="@drawable/btn_background"
             android:text="@string/login"
             android:textColor="@color/colorPrimary"/>
 
-        <TextView
-            android:id="@+id/register_mahasiwa"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/activity_vertical_margin"
-            android:gravity="center"
-            android:text="@string/register_caption"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textColor="@color/colorWhite" />
-
     </LinearLayout>
+
 
     <TextView
         android:id="@+id/textView"

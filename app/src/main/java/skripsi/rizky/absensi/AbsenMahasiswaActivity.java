@@ -7,6 +7,7 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.test.mock.MockPackageManager;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -33,13 +34,12 @@ public class AbsenMahasiswaActivity extends AppCompatActivity {
     GPSTracker gps;
     private Button btnGetLocation, btnAbsensi;
     private GetLocationMahasiswaService getLocationMahasiswaService;
-    private Spinner spnKelas;
     private RadioGroup radioJurusanGroup;
     private RadioButton radioJurusanButton;
-    private EditText pilihSesi;
+    private EditText pilihSesi, textRuang;
 
 
-    public static void start(Context context){
+    public static void start(Context context) {
 
 
         Intent intent = new Intent(context, AbsenMahasiswaActivity.class);
@@ -66,12 +66,14 @@ public class AbsenMahasiswaActivity extends AppCompatActivity {
         }
 
         radioJurusanGroup = (RadioGroup) findViewById(R.id.radioJurusan);
-        spnKelas = (Spinner) findViewById(R.id.spnKelas);
+
         btnAbsensi = (Button) findViewById(R.id.btnAbsen);
         pilihSesi = (EditText) findViewById(R.id.pilihSesi);
+        textRuang = (EditText) findViewById(R.id.textRuangMahasiswa);
 
         pilihSesi.setEnabled(false);
         btnAbsensi.setEnabled(false);
+        textRuang.setEnabled(false);
 
         btnGetLocation = (Button) findViewById(R.id.btnGetLocation);
 
@@ -79,21 +81,10 @@ public class AbsenMahasiswaActivity extends AppCompatActivity {
 
             SesiData sesiData = (SesiData) getIntent().getSerializableExtra("kelas");
             pilihSesi.setText(sesiData.getId_sesi());
+            textRuang.setText(sesiData.getRuang());
 
         }
 
-
-//        btnGetLocation.setVisibility(View.INVISIBLE);
-
-//        Dosen dosen = PrefUtilDosen.getDosen(this, PrefUtilDosen.DOSEN_SESSION);
-//
-//        if (dosen.equals("dosen_session")){
-//
-//            btnGetLocation.setVisibility(View.VISIBLE);
-//        } else {
-//
-//            btnGetLocation.setVisibility(View.INVISIBLE);
-//        }
 
         btnGetLocation.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -101,87 +92,110 @@ public class AbsenMahasiswaActivity extends AppCompatActivity {
 
                 gps = new GPSTracker(AbsenMahasiswaActivity.this);
 
-                // Check if gps enabled
                 if (gps.canGetLocation()) {
 
                     double latitude = gps.getLatitude();
                     double longitude = gps.getLongitude();
 
-                    Toast.makeText(getApplicationContext(), "Your Location is - \nLat: " +
-                            latitude + "\nLong: " + longitude, Toast.LENGTH_SHORT).show();
+                    if (latitude == -0.4727658 && longitude == 117.1534053 && "405".equals(textRuang.getText().toString())) {
 
-                    if (longitude == -18.5333) {
+                        Toast.makeText(AbsenMahasiswaActivity.this, "Anda sudah dapat melakukan absensi", Toast.LENGTH_SHORT).show();
 
                         btnAbsensi.setEnabled(true);
-                        btnAbsensi.setOnClickListener(new View.OnClickListener() {
-                            @Override
-                            public void onClick(View view) {
+                        getLocation();
 
-                                //sendLocation();
-                                double latitude = gps.getLatitude();
-                                double longitude = gps.getLongitude();
+                    } else if (latitude == -0.4727905 && longitude == 117.1533938 && "405".equals(textRuang.getText().toString())) {
 
-                                Mahasiswa mahasiswa = PrefUtilMahasiswa.getMahasiswa(getApplicationContext(), PrefUtilMahasiswa.MAHASISWA_SESSION);
+                        btnAbsensi.setEnabled(true);
+                        getLocation();
+                    } else if (latitude == -0.4727493 && longitude == 117.1534283 && "406".equals(textRuang.getText().toString())) {
 
-                                String nimMahasiswa = mahasiswa.getMahasiswaData().getNim();
-                                String namaMahasiswa = mahasiswa.getMahasiswaData().getNama();
+                        btnAbsensi.setEnabled(true);
+                        getLocation();
+                    } else if (latitude == -0.4737512 && longitude == 117.1534972 && "406".equals(textRuang.getText().toString())) {
 
-                                int selectedId = radioJurusanGroup.getCheckedRadioButtonId();
-                                radioJurusanButton = (RadioButton) findViewById(selectedId);
-                                String jurusan = radioJurusanButton.getText().toString();
+                        btnAbsensi.setEnabled(true);
+                        getLocation();
+                    } else if (latitude == -0.4727731 && longitude == 117.1536236 && "407".equals(textRuang.getText().toString())) {
 
-                                String pilihKelas = pilihSesi.getText().toString();
-                                String kelas = spnKelas.getSelectedItem().toString();
+                        btnAbsensi.setEnabled(true);
+                        getLocation();
+                    } else if (latitude == -0.4727576 && longitude == 117.1534168 && "407".equals(textRuang.getText().toString())) {
 
-                                getLocationMahasiswaService = new GetLocationMahasiswaService(getApplicationContext());
-                                getLocationMahasiswaService.doGetLocationMahasiswa(nimMahasiswa, namaMahasiswa, jurusan, kelas, latitude, longitude, pilihKelas, new Callback() {
+                        btnAbsensi.setEnabled(true);
+                        getLocation();
+                    } else if (latitude == -0.4728893 && longitude == 117.1533479 && "407".equals(textRuang.getText().toString())) {
 
-                                    @Override
-                                    public void onResponse(Call call, Response response) {
-
-
-                                        BaseResponse baseResponse = (BaseResponse) response.body();
-
-                                        if (baseResponse != null) {
-                                            if (!baseResponse.isError()) {
-
-                                                HalamanMahasiswa.start(AbsenMahasiswaActivity.this);
-                                                AbsenMahasiswaActivity.this.finish();
-
-                                            }
-
-                                            Toast.makeText(AbsenMahasiswaActivity.this, baseResponse.getMessage(), Toast.LENGTH_SHORT).show();
-                                            btnAbsensi.setEnabled(false);
-                                        }
-                                    }
-
-                                    @Override
-                                    public void onFailure(Call call, Throwable t) {
-
-                                        Toast.makeText(AbsenMahasiswaActivity.this, "An error occured", Toast.LENGTH_SHORT).show();
-                                    }
-                                });
-
-                            }
-                        });
+                        btnAbsensi.setEnabled(true);
+                        getLocation();
                     } else {
 
-                        btnAbsensi.setEnabled(false);
+                        Toast.makeText(AbsenMahasiswaActivity.this, "Anda belum berada di lokasi dan ruang yang sesuai\n Coba cari lokasi yang sesuai", Toast.LENGTH_SHORT).show();
                     }
                 } else {
 
-                    // can't get location
-                    // GPS or Network is not enabled
-                    // Ask user to enable GPS/network in settings
                     gps.showSettingsAlert();
                 }
             }
         });
-//
+    }
 
 
+    private void sendLocation() {
+
+        double latitude = gps.getLatitude();
+        double longitude = gps.getLongitude();
+
+        Mahasiswa mahasiswa = PrefUtilMahasiswa.getMahasiswa(getApplicationContext(), PrefUtilMahasiswa.MAHASISWA_SESSION);
+
+        String nimMahasiswa = mahasiswa.getMahasiswaData().getNim();
+        String namaMahasiswa = mahasiswa.getMahasiswaData().getNama();
+
+        int selectedId = radioJurusanGroup.getCheckedRadioButtonId();
+        radioJurusanButton = (RadioButton) findViewById(selectedId);
+        String jurusan = radioJurusanButton.getText().toString();
+
+        String pilihKelas = pilihSesi.getText().toString();
+
+        getLocationMahasiswaService = new GetLocationMahasiswaService(getApplicationContext());
+        getLocationMahasiswaService.doGetLocationMahasiswa(nimMahasiswa, namaMahasiswa, jurusan, latitude, longitude, pilihKelas, new Callback() {
+            @Override
+            public void onResponse(Call call, Response response) {
+
+                BaseResponse baseResponse = (BaseResponse) response.body();
+
+                if (baseResponse != null) {
+                    if (!baseResponse.isError()) {
+
+                        HalamanMahasiswa.start(AbsenMahasiswaActivity.this);
+                        AbsenMahasiswaActivity.this.finish();
+
+                    }
+
+                    Toast.makeText(AbsenMahasiswaActivity.this, baseResponse.getMessage(), Toast.LENGTH_SHORT).show();
+                    btnAbsensi.setEnabled(false);
+                }
+            }
+
+            @Override
+            public void onFailure(Call call, Throwable t) {
+
+                Toast.makeText(AbsenMahasiswaActivity.this, "An error occured", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+    }
+
+    private void getLocation() {
 
 
+        btnAbsensi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                sendLocation();
+            }
+        });
     }
 
 

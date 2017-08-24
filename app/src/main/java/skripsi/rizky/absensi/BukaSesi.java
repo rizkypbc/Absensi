@@ -23,10 +23,10 @@ public class BukaSesi extends AppCompatActivity {
 
     final static String API_MATAKULIAH = "http://192.168.43.212/absensi/MataKuliah/mataKuliah.php";
 
-//    final static String API_MATAKULIAH = "http:// 10.223.217.154/absensi/MataKuliah/mataKuliah.php";
+//    final static String API_MATAKULIAH = "http://10.223.222.40/absensi/MataKuliah/mataKuliah.php";
 
     private BukaSesiService bukaSesiService;
-    private Spinner spnMatkul, spnStatus;
+    private Spinner spnMatkul, spnStatus, spnKelas;
     private Button btnBukaKelas;
     private EditText txtMateri, txtIdSesi;
 
@@ -40,6 +40,7 @@ public class BukaSesi extends AppCompatActivity {
         btnBukaKelas = (Button) findViewById(R.id.btnBukaSesi);
         txtMateri = (EditText) findViewById(R.id.txtMateri);
         txtIdSesi = (EditText) findViewById(R.id.txtIdSesi);
+        spnKelas = (Spinner) findViewById(R.id.spnKelas);
 
         btnBukaKelas.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -63,11 +64,12 @@ public class BukaSesi extends AppCompatActivity {
                 String namaDosen = dosen.getDosenData().getNama();
 
 
+                String ruang = spnKelas.getSelectedItem().toString();
                 String matkul = spnMatkul.getSelectedItem().toString();
                 String keterangan = spnStatus.getSelectedItem().toString();
 
                 bukaSesiService = new BukaSesiService(getApplicationContext());
-                bukaSesiService.doBukaSesi(idSesi, materi, namaDosen, keterangan, matkul, new Callback() {
+                bukaSesiService.doBukaSesi(idSesi, materi, namaDosen, ruang, keterangan, matkul, new Callback() {
                     @Override
                     public void onResponse(Call call, Response response) {
 

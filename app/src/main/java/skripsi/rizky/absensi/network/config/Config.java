@@ -6,9 +6,9 @@ package skripsi.rizky.absensi.network.config;
 
 public class Config {
 
-    public static final String BASE_URL = "http://192.168.43.212";
+//    public static final String BASE_URL = "http://192.168.43.212";
 
-//    public static final String BASE_URL = "http://10.223.217.154";
+    public static final String BASE_URL = "http://10.223.222.40";
 
     public static final String API_URL = BASE_URL + "/absensi";
 

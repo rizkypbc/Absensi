@@ -51,21 +51,19 @@
         <activity
             android:name=".UpdateSesi"
             android:label="Tutup Sesi"
-            android:parentActivityName=".ListSesi"></activity>
+            android:parentActivityName=".ListSesi" />
         <activity
             android:name=".ListSesi"
             android:label="List Sesi"
             android:parentActivityName=".DosenActivity" />
-
         <activity
             android:name=".ListAbsen"
             android:label="List Absen Siswa"
             android:parentActivityName=".DosenActivity" />
-
         <activity
             android:name=".ListKelas"
             android:label="List Kelas"
-            android:parentActivityName=".HalamanMahasiswa"></activity>
+            android:parentActivityName=".HalamanMahasiswa" />
     </application>
 
 </manifest>

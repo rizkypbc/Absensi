@@ -20,8 +20,8 @@ public class GetLocationMahasiswaService {
                 .create(GetLocationMahasiswaInterface.class);
     }
 
-    public void doGetLocationMahasiswa(String nim, String nama, String jurusan, String kelas, double latitude, double longitude, String id_sesi, Callback callback) {
+    public void doGetLocationMahasiswa(String nim, String nama, String jurusan, double latitude, double longitude, String id_sesi, Callback callback) {
 
-        getLocationMahasiswaInterface.getLocationMahasiswa(nim, nama, jurusan, kelas, latitude, longitude, id_sesi).enqueue(callback);
+        getLocationMahasiswaInterface.getLocationMahasiswa(nim, nama, jurusan, latitude, longitude, id_sesi).enqueue(callback);
     }
 }

@@ -2,6 +2,7 @@ package skripsi.rizky.absensi;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -57,6 +58,7 @@ public class DosenActivity extends AppCompatActivity {
             public void onClick(View view) {
 
                 startActivity(new Intent(DosenActivity.this, ListSesi.class));
+
             }
         });
 

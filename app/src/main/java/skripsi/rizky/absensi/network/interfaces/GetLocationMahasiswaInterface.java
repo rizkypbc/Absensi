@@ -19,7 +19,6 @@ public interface GetLocationMahasiswaInterface {
             @Field("nim") String nim,
             @Field("nama") String nama,
             @Field("jurusan") String jurusan,
-            @Field("kelas") String kelas,
             @Field("latitude") double latitude,
             @Field("longitude") double longitude,
             @Field("id_sesi") String id_sesi);

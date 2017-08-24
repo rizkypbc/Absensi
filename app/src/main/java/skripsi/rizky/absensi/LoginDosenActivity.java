@@ -52,7 +52,7 @@ public class LoginDosenActivity extends AppCompatActivity {
 
         txtNIP = (EditText)findViewById(R.id.nip);
         txtPassword = (EditText)findViewById(R.id.password_dosen);
-        registerDosen = (TextView)findViewById(R.id.register_dosen);
+//        registerDosen = (TextView)findViewById(R.id.register_dosen);
         btnLoginDosen = (Button)findViewById(R.id.loginDosen);
 
         btnLoginDosen.setOnClickListener(new View.OnClickListener() {
@@ -62,19 +62,19 @@ public class LoginDosenActivity extends AppCompatActivity {
             }
         });
 
-        String captionDosen = "Dont have a account? <b>Register<b>";
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(Html.fromHtml(captionDosen));
-        spannableStringBuilder.setSpan(new ClickableSpan() {
-            @Override
-            public void onClick(View view) {
-                RegisterDosenActivity.start(LoginDosenActivity.this);
-            }
-        }, captionDosen.indexOf("Register") -3, spannableStringBuilder.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
-        spannableStringBuilder.setSpan(new ForegroundColorSpan(Color.WHITE), captionDosen
-        .indexOf("Register") -3, spannableStringBuilder.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
-
-        registerDosen.setText(spannableStringBuilder);
-        registerDosen.setMovementMethod(LinkMovementMethod.getInstance());
+//        String captionDosen = "Dont have a account? <b>Register<b>";
+//        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(Html.fromHtml(captionDosen));
+//        spannableStringBuilder.setSpan(new ClickableSpan() {
+//            @Override
+//            public void onClick(View view) {
+//                RegisterDosenActivity.start(LoginDosenActivity.this);
+//            }
+//        }, captionDosen.indexOf("Register") -3, spannableStringBuilder.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+//        spannableStringBuilder.setSpan(new ForegroundColorSpan(Color.WHITE), captionDosen
+//        .indexOf("Register") -3, spannableStringBuilder.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+//
+//        registerDosen.setText(spannableStringBuilder);
+//        registerDosen.setMovementMethod(LinkMovementMethod.getInstance());
     }
 
     void loginActDosen(){

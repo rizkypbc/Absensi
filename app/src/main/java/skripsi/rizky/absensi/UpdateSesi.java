@@ -23,12 +23,15 @@ import skripsi.rizky.absensi.util.PrefUtilDosen;
 
 public class UpdateSesi extends AppCompatActivity {
 
-    final static String API_MATAKULIAH = "http://192.168.43.212/absensi/MataKuliah/mataKuliah.php";
+//    final static String API_MATAKULIAH = "http://192.168.43.212/absensi/MataKuliah/mataKuliah.php";
 
-//    final static String API_MATAKULIAH = "http://10.223.217.154/absensi/MataKuliah/mataKuliah.php";
+//    final static String API_MATAKULIAH = "http://10.223.222.40/absensi/MataKuliah/mataKuliah.php";
 
-    EditText textMateriEdit, textNamaDosenEdit, textTanggalEdit, textWaktuEdit, textIdSesi;
-    Spinner spnMatkulEdit, spnStatusEdit;
+    EditText textMateriEdit, textNamaDosenEdit, textTanggalEdit,
+            textWaktuEdit, textIdSesi, textKelasEdit, textMatkulEdit, textStatusEdit;
+
+    private Spinner spnStatusEdit;
+
     private Button btnTutupSesi;
     private TutupSesiService tutupSesiService;
 
@@ -42,15 +45,18 @@ public class UpdateSesi extends AppCompatActivity {
         textNamaDosenEdit = (EditText) findViewById(R.id.textNamaDosenEdit);
         textTanggalEdit = (EditText) findViewById(R.id.textTanggalEdit);
         textWaktuEdit = (EditText) findViewById(R.id.textWaktuEdit);
-        spnMatkulEdit = (Spinner) findViewById(R.id.spnMatKulEdit);
+        textMatkulEdit = (EditText) findViewById(R.id.textMatKulEdit);
         spnStatusEdit = (Spinner) findViewById(R.id.spnStatusEdit);
         btnTutupSesi = (Button) findViewById(R.id.btnTutupSesi);
         textIdSesi = (EditText) findViewById(R.id.editTextIdSesi);
+        textKelasEdit = (EditText) findViewById(R.id.textKelasEdit);
 
         textIdSesi.setEnabled(false);
         textNamaDosenEdit.setEnabled(false);
+        textKelasEdit.setEnabled(false);
         textTanggalEdit.setEnabled(false);
         textWaktuEdit.setEnabled(false);
+        textMatkulEdit.setEnabled(false);
         btnTutupSesi.setVisibility(View.INVISIBLE);
 
 
@@ -60,8 +66,10 @@ public class UpdateSesi extends AppCompatActivity {
             textIdSesi.setText(sesiData.getId_sesi());
             textMateriEdit.setText(sesiData.getMateri());
             textNamaDosenEdit.setText(sesiData.getNama_dosen());
+            textKelasEdit.setText(sesiData.getRuang());
             textTanggalEdit.setText(sesiData.getTanggal());
             textWaktuEdit.setText(sesiData.getWaktu());
+            textMatkulEdit.setText(sesiData.getKode_matkul());
         }
 
         Dosen dosen = PrefUtilDosen.getDosen(this, PrefUtilDosen.DOSEN_SESSION);
@@ -117,7 +125,6 @@ public class UpdateSesi extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        new Downloader(UpdateSesi.this, API_MATAKULIAH, spnMatkulEdit).execute();
 
     }
 }

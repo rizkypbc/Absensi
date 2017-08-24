@@ -53,7 +53,7 @@ public class LoginMahasiswaActivity extends AppCompatActivity {
         txtNIM = (EditText)findViewById(R.id.nim);
         txtPassword = (EditText)findViewById(R.id.password);
         btnLoginMahasiswa = (Button)findViewById(R.id.loginMahasiswa);
-        registerCaption = (TextView)findViewById(R.id.register_mahasiwa);
+//        registerCaption = (TextView)findViewById(R.id.register_mahasiwa);
 
         btnLoginMahasiswa.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,19 +62,19 @@ public class LoginMahasiswaActivity extends AppCompatActivity {
             }
         });
 
-        String caption = "Dont have a account? <b>Register<b>";
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(Html.fromHtml(caption));
-        spannableStringBuilder.setSpan(new ClickableSpan() {
-            @Override
-            public void onClick(View view) {
-                RegisterMahasiswaActivity.start(LoginMahasiswaActivity.this);
-            }
-        }, caption.indexOf("Register") - 3, spannableStringBuilder.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
-        spannableStringBuilder.setSpan(new ForegroundColorSpan(Color.WHITE), caption
-        .indexOf("Register") -3, spannableStringBuilder.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
-
-        registerCaption.setText(spannableStringBuilder);
-        registerCaption.setMovementMethod(LinkMovementMethod.getInstance());
+//        String caption = "Dont have a account? <b>Register<b>";
+//        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(Html.fromHtml(caption));
+//        spannableStringBuilder.setSpan(new ClickableSpan() {
+//            @Override
+//            public void onClick(View view) {
+//                RegisterMahasiswaActivity.start(LoginMahasiswaActivity.this);
+//            }
+//        }, caption.indexOf("Register") - 3, spannableStringBuilder.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+//        spannableStringBuilder.setSpan(new ForegroundColorSpan(Color.WHITE), caption
+//        .indexOf("Register") -3, spannableStringBuilder.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+//
+//        registerCaption.setText(spannableStringBuilder);
+//        registerCaption.setMovementMethod(LinkMovementMethod.getInstance());
     }
 
     void loginAct(){
@@ -101,6 +101,7 @@ public class LoginMahasiswaActivity extends AppCompatActivity {
 
                 if (mahasiswa != null){
                     if (!mahasiswa.isError()){
+
                         PrefUtilMahasiswa.putMahasiswa(LoginMahasiswaActivity.this, PrefUtilMahasiswa.MAHASISWA_SESSION, mahasiswa);
                         HalamanMahasiswa.start(LoginMahasiswaActivity.this);
                         LoginMahasiswaActivity.this.finish();

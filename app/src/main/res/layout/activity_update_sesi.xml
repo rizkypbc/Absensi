@@ -80,6 +80,24 @@
             android:inputType="text"
             android:padding="@dimen/activity_vertical_margin" />
 
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/activity_vertical_margin"
+            android:text="Ruang"
+            android:textColor="@color/colorPrimary"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/textKelasEdit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/custom_edit_text"
+            android:ems="5"
+            android:inputType="text"
+            android:padding="@dimen/activity_vertical_margin" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -122,12 +140,13 @@
             android:textColor="@color/colorPrimary"
             android:textSize="18sp" />
 
-        <Spinner
-            android:id="@+id/spnMatKulEdit"
-            style="@android:style/Widget.Holo.Light.Spinner"
+        <EditText
+            android:id="@+id/textMatKulEdit"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/colorPrimary" />
+            android:background="@drawable/custom_edit_text"
+            android:ems="5"
+            android:padding="16dp" />
 
         <TextView
             android:layout_width="wrap_content"

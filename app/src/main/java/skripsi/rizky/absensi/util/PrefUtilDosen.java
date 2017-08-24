@@ -14,8 +14,7 @@ import skripsi.rizky.absensi.model.Dosen;
  * Created by ASUS on 15/07/2017.
  */
 
-public class
-PrefUtilDosen {
+public class PrefUtilDosen {
 
     public static final String DOSEN_SESSION = "dosen_session";
 

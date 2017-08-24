@@ -67,21 +67,7 @@
 
         </RadioGroup>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="@dimen/activity_vertical_margin"
-            android:text="Kelas"
-            android:textColor="@color/colorWhite"
-            android:textSize="18sp" />
 
-        <Spinner
-            android:id="@+id/spnKelas"
-            style="@android:style/Widget.Holo.Light.Spinner"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@color/colorWhite"
-            android:entries="@array/kelas" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -97,6 +83,18 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="Kode Sesi"
+            android:inputType="text"
+            android:padding="@dimen/activity_vertical_margin"
+            android:textColor="@color/colorWhite"
+            android:textColorHint="@color/colorWhite"
+            android:theme="@style/WhiteFocus" />
+
+        <EditText
+            android:id="@+id/textRuangMahasiswa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Ruang"
             android:inputType="text"
             android:padding="@dimen/activity_vertical_margin"
             android:textColor="@color/colorWhite"
