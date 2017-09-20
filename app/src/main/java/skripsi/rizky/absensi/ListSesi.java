@@ -1,6 +1,7 @@
 package skripsi.rizky.absensi;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.widget.SwipeRefreshLayout;
@@ -18,14 +19,24 @@ import skripsi.rizky.absensi.util.PrefUtilDosen;
 
 public class ListSesi extends AppCompatActivity {
 
-    static String urlAddress = "http://192.168.43.212/absensi/MataKuliah/viewSesi.php";
+//    static String urlAddress = "http://192.168.1.14/absensi/MataKuliah/viewSesi.php?nama_dosen=";
 
-//    static String urlAddress = "http://10.223.222.40/absensi/MataKuliah/viewSesi.php";
+//    static String urlAddress = "http://192.168.1.14/absensi/MataKuliah/viewSesi.php";
 
+
+    static String urlAddress = "http://aksesblk-samarinda.com/absensi/MataKuliah/viewSesi.php";
+
+
+    public static void start(Context context) {
+
+        Intent intent = new Intent(context, ListSesi.class);
+        context.startActivity(intent);
+    }
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.content_main);
+
 
         final RecyclerView rv = (RecyclerView) findViewById(R.id.rv);
         rv.setLayoutManager(new LinearLayoutManager(this));

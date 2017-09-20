@@ -68,26 +68,53 @@
         </RadioGroup>
 
 
-
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="@dimen/activity_vertical_margin"
-            android:text="Pilih Sesi"
+            android:text="Mata Kuliah"
             android:textColor="@color/colorWhite"
             android:textSize="18sp" />
 
         <EditText
-            android:id="@+id/pilihSesi"
+            android:id="@+id/mataKuliah"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="Kode Sesi"
+            android:hint="Mata Kuliah"
             android:inputType="text"
             android:padding="@dimen/activity_vertical_margin"
             android:textColor="@color/colorWhite"
             android:textColorHint="@color/colorWhite"
             android:theme="@style/WhiteFocus" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/activity_vertical_margin"
+            android:text="Pertemuan"
+            android:textColor="@color/colorWhite"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/pertemuan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Pertemuan"
+            android:inputType="text"
+            android:padding="@dimen/activity_vertical_margin"
+            android:textColor="@color/colorWhite"
+            android:textColorHint="@color/colorWhite"
+            android:theme="@style/WhiteFocus" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/activity_vertical_margin"
+            android:text="Ruang"
+            android:textColor="@color/colorWhite"
+            android:textSize="18sp" />
 
         <EditText
             android:id="@+id/textRuangMahasiswa"
@@ -100,6 +127,28 @@
             android:textColor="@color/colorWhite"
             android:textColorHint="@color/colorWhite"
             android:theme="@style/WhiteFocus" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/activity_vertical_margin"
+            android:text="Kode Sesi"
+            android:textColor="@color/colorWhite"
+            android:textSize="18sp"
+            android:visibility="invisible" />
+
+        <EditText
+            android:id="@+id/pilihSesi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Kode Sesi"
+            android:inputType="text"
+            android:padding="@dimen/activity_vertical_margin"
+            android:textColor="@color/colorWhite"
+            android:textColorHint="@color/colorWhite"
+            android:theme="@style/WhiteFocus"
+            android:visibility="invisible" />
 
         <!--<Spinner-->
         <!--android:id="@+id/spnSesi"-->

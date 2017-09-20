@@ -64,6 +64,13 @@
             android:name=".ListKelas"
             android:label="List Kelas"
             android:parentActivityName=".HalamanMahasiswa" />
+        <activity
+            android:name=".ListIzin"
+            android:label="List Izin"
+            android:parentActivityName=".HalamanMahasiswa" />
+        <activity
+            android:name=".IzinMahasiswa"
+            android:parentActivityName=".HalamanMahasiswa"></activity>
     </application>
 
 </manifest>

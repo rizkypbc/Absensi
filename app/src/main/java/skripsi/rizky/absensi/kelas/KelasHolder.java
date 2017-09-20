@@ -15,6 +15,7 @@ public class KelasHolder extends RecyclerView.ViewHolder {
     public TextView idSesiKelas;
     public TextView materiKelas;
     public TextView dosenKelas;
+    public TextView pertemuanKelas;
     public TextView ruangKelas;
     public TextView tanggalKelas;
     public TextView waktuKelas;
@@ -28,6 +29,7 @@ public class KelasHolder extends RecyclerView.ViewHolder {
         idSesiKelas = (TextView) itemViewKelas.findViewById(R.id.textIdSesiKelas);
         materiKelas = (TextView) itemViewKelas.findViewById(R.id.textMateriKelas);
         dosenKelas = (TextView) itemViewKelas.findViewById(R.id.textNamaDosenKelas);
+        pertemuanKelas = (TextView) itemViewKelas.findViewById(R.id.textPertemuanKelas);
         ruangKelas = (TextView) itemViewKelas.findViewById(R.id.textRuangKelas);
         tanggalKelas = (TextView) itemViewKelas.findViewById(R.id.textTanggalKelas);
         waktuKelas = (TextView) itemViewKelas.findViewById(R.id.textWaktuKelas);

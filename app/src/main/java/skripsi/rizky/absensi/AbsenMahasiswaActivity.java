@@ -36,7 +36,7 @@ public class AbsenMahasiswaActivity extends AppCompatActivity {
     private GetLocationMahasiswaService getLocationMahasiswaService;
     private RadioGroup radioJurusanGroup;
     private RadioButton radioJurusanButton;
-    private EditText pilihSesi, textRuang;
+    private EditText mataKuliah, textRuang, pertemuan, pilihSesi;
 
 
     public static void start(Context context) {
@@ -67,11 +67,15 @@ public class AbsenMahasiswaActivity extends AppCompatActivity {
 
         radioJurusanGroup = (RadioGroup) findViewById(R.id.radioJurusan);
 
-        btnAbsensi = (Button) findViewById(R.id.btnAbsen);
         pilihSesi = (EditText) findViewById(R.id.pilihSesi);
+        btnAbsensi = (Button) findViewById(R.id.btnAbsen);
+        mataKuliah = (EditText) findViewById(R.id.mataKuliah);
         textRuang = (EditText) findViewById(R.id.textRuangMahasiswa);
+        pertemuan = (EditText) findViewById(R.id.pertemuan);
 
         pilihSesi.setEnabled(false);
+        mataKuliah.setEnabled(false);
+        pertemuan.setEnabled(false);
         btnAbsensi.setEnabled(false);
         textRuang.setEnabled(false);
 
@@ -81,6 +85,8 @@ public class AbsenMahasiswaActivity extends AppCompatActivity {
 
             SesiData sesiData = (SesiData) getIntent().getSerializableExtra("kelas");
             pilihSesi.setText(sesiData.getId_sesi());
+            mataKuliah.setText(sesiData.getKode_matkul());
+            pertemuan.setText(sesiData.getPertemuan());
             textRuang.setText(sesiData.getRuang());
 
         }
@@ -97,12 +103,19 @@ public class AbsenMahasiswaActivity extends AppCompatActivity {
                     double latitude = gps.getLatitude();
                     double longitude = gps.getLongitude();
 
-                    if (latitude == -0.4727658 && longitude == 117.1534053 && "405".equals(textRuang.getText().toString())) {
+                    if (longitude == -18.5333) {
 
                         Toast.makeText(AbsenMahasiswaActivity.this, "Anda sudah dapat melakukan absensi", Toast.LENGTH_SHORT).show();
 
                         btnAbsensi.setEnabled(true);
                         getLocation();
+
+//                    if (latitude == -0.4727658 && longitude == 117.1534053 && "405".equals(textRuang.getText().toString())) {
+//
+//                        Toast.makeText(AbsenMahasiswaActivity.this, "Anda sudah dapat melakukan absensi", Toast.LENGTH_SHORT).show();
+//
+//                        btnAbsensi.setEnabled(true);
+//                        getLocation();
 
                     } else if (latitude == -0.4727905 && longitude == 117.1533938 && "405".equals(textRuang.getText().toString())) {
 

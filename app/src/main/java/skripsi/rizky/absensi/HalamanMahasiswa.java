@@ -18,7 +18,7 @@ public class HalamanMahasiswa extends AppCompatActivity {
 
     private TextView greeting;
     private TextView nim;
-    private ImageView btnLogout, btnAbsensi;
+    private ImageView btnLogout, btnAbsensi, btnIzin;
     private GetLocationMahasiswaService getLocationMahasiswaService;
 
     public static void start(Context context) {
@@ -37,6 +37,7 @@ public class HalamanMahasiswa extends AppCompatActivity {
         nim = (TextView) findViewById(R.id.nim);
         btnLogout = (ImageView) findViewById(R.id.btn_logout);
         btnAbsensi = (ImageView) findViewById(R.id.btn_list_kelas);
+        btnIzin = (ImageView) findViewById(R.id.btn_izin);
 
         btnAbsensi.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -46,6 +47,16 @@ public class HalamanMahasiswa extends AppCompatActivity {
                 startActivity(kelas);
             }
         });
+
+        btnIzin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent izin = new Intent(getApplicationContext(), ListIzin.class);
+                startActivity(izin);
+            }
+        });
+
 
 
         Mahasiswa mahasiswa = PrefUtilMahasiswa.getMahasiswa(this, PrefUtilMahasiswa.MAHASISWA_SESSION);

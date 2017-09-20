@@ -17,18 +17,21 @@ import skripsi.rizky.absensi.matakuliah.Downloader;
 import skripsi.rizky.absensi.model.BaseResponse;
 import skripsi.rizky.absensi.model.Dosen;
 import skripsi.rizky.absensi.network.BukaSesiService;
+import skripsi.rizky.absensi.ruang.DownloaderRuang;
 import skripsi.rizky.absensi.util.PrefUtilDosen;
 
 public class BukaSesi extends AppCompatActivity {
 
-    final static String API_MATAKULIAH = "http://192.168.43.212/absensi/MataKuliah/mataKuliah.php";
+//    final static String API_MATAKULIAH = "http://192.168.1.14/absensi/MataKuliah/mataKuliah.php";
+//    final static String API_RUANG = "http://192.168.1.14/absensi/MataKuliah/ruang.php";
 
-//    final static String API_MATAKULIAH = "http://10.223.222.40/absensi/MataKuliah/mataKuliah.php";
+    final static String API_MATAKULIAH = "http://aksesblk-samarinda.com/absensi/MataKuliah/mataKuliah.php";
+    final static String API_RUANG = "http://aksesblk-samarinda.com/absensi/MataKuliah/ruang.php";
 
     private BukaSesiService bukaSesiService;
     private Spinner spnMatkul, spnStatus, spnKelas;
     private Button btnBukaKelas;
-    private EditText txtMateri, txtIdSesi;
+    private EditText txtMateri, txtPertemuanSesi;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,24 +42,24 @@ public class BukaSesi extends AppCompatActivity {
         spnMatkul = (Spinner) findViewById(R.id.spnMatKul);
         btnBukaKelas = (Button) findViewById(R.id.btnBukaSesi);
         txtMateri = (EditText) findViewById(R.id.txtMateri);
-        txtIdSesi = (EditText) findViewById(R.id.txtIdSesi);
+        txtPertemuanSesi = (EditText) findViewById(R.id.txtPertemuanSesi);
         spnKelas = (Spinner) findViewById(R.id.spnKelas);
 
         btnBukaKelas.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                String idSesi = txtIdSesi.getText().toString();
+                String pertemuanSesi = txtPertemuanSesi.getText().toString();
 
-                if (TextUtils.isEmpty(idSesi)) {
-                    txtIdSesi.setError("Kode Sesi tidak boleh kosong");
+                if (TextUtils.isEmpty(pertemuanSesi)) {
+                    txtPertemuanSesi.setError("Field Pertemuan tidak boleh kosong");
                     return;
                 }
 
                 String materi = txtMateri.getText().toString();
 
                 if (TextUtils.isEmpty(materi)) {
-                    txtMateri.setError("Materi tidak boleh kosong");
+                    txtMateri.setError("Field Materi tidak boleh kosong");
                     return;
                 }
 
@@ -69,7 +72,7 @@ public class BukaSesi extends AppCompatActivity {
                 String keterangan = spnStatus.getSelectedItem().toString();
 
                 bukaSesiService = new BukaSesiService(getApplicationContext());
-                bukaSesiService.doBukaSesi(idSesi, materi, namaDosen, ruang, keterangan, matkul, new Callback() {
+                bukaSesiService.doBukaSesi(materi, namaDosen, pertemuanSesi, ruang, keterangan, matkul, new Callback() {
                     @Override
                     public void onResponse(Call call, Response response) {
 
@@ -101,5 +104,6 @@ public class BukaSesi extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
         new Downloader(BukaSesi.this, API_MATAKULIAH, spnMatkul).execute();
+        new DownloaderRuang(BukaSesi.this, API_RUANG, spnKelas).execute();
     }
 }

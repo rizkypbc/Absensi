@@ -28,7 +28,7 @@ public class UpdateSesi extends AppCompatActivity {
 //    final static String API_MATAKULIAH = "http://10.223.222.40/absensi/MataKuliah/mataKuliah.php";
 
     EditText textMateriEdit, textNamaDosenEdit, textTanggalEdit,
-            textWaktuEdit, textIdSesi, textKelasEdit, textMatkulEdit, textStatusEdit;
+            textWaktuEdit, textIdSesi, textKelasEdit, textMatkulEdit, textPertemuanEdit;
 
     private Spinner spnStatusEdit;
 
@@ -50,13 +50,17 @@ public class UpdateSesi extends AppCompatActivity {
         btnTutupSesi = (Button) findViewById(R.id.btnTutupSesi);
         textIdSesi = (EditText) findViewById(R.id.editTextIdSesi);
         textKelasEdit = (EditText) findViewById(R.id.textKelasEdit);
+        textPertemuanEdit = (EditText) findViewById(R.id.textPertemuanEdit);
 
         textIdSesi.setEnabled(false);
         textNamaDosenEdit.setEnabled(false);
         textKelasEdit.setEnabled(false);
+        textPertemuanEdit.setEnabled(false);
         textTanggalEdit.setEnabled(false);
         textWaktuEdit.setEnabled(false);
         textMatkulEdit.setEnabled(false);
+
+        textIdSesi.setVisibility(View.INVISIBLE);
         btnTutupSesi.setVisibility(View.INVISIBLE);
 
 
@@ -66,6 +70,7 @@ public class UpdateSesi extends AppCompatActivity {
             textIdSesi.setText(sesiData.getId_sesi());
             textMateriEdit.setText(sesiData.getMateri());
             textNamaDosenEdit.setText(sesiData.getNama_dosen());
+            textPertemuanEdit.setText(sesiData.getPertemuan());
             textKelasEdit.setText(sesiData.getRuang());
             textTanggalEdit.setText(sesiData.getTanggal());
             textWaktuEdit.setText(sesiData.getWaktu());

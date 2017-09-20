@@ -38,17 +38,6 @@
             android:textColor="@color/colorWhite"
             android:textSize="26sp" />
 
-        <EditText
-            android:id="@+id/txtIdSesi"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="Id Sesi"
-            android:inputType="text"
-            android:padding="@dimen/activity_vertical_margin"
-            android:textColor="@color/colorWhite"
-            android:textColorHint="@color/colorWhite"
-            android:theme="@style/WhiteFocus" />
 
         <EditText
             android:id="@+id/txtMateri"
@@ -77,6 +66,18 @@
             android:layout_height="wrap_content"
             android:backgroundTint="@color/colorWhite" />
 
+        <EditText
+            android:id="@+id/txtPertemuanSesi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Pertemuan"
+            android:inputType="text"
+            android:padding="@dimen/activity_vertical_margin"
+            android:textColor="@color/colorWhite"
+            android:textColorHint="@color/colorWhite"
+            android:theme="@style/WhiteFocus" />
+
 
         <TextView
             android:layout_width="wrap_content"
@@ -91,8 +92,7 @@
             style="@android:style/Widget.Holo.Light.Spinner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/colorWhite"
-            android:entries="@array/kelas" />
+            android:backgroundTint="@color/colorWhite" />
 
         <TextView
             android:layout_width="wrap_content"
