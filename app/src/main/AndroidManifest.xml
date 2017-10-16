@@ -54,7 +54,7 @@
             android:parentActivityName=".ListSesi" />
         <activity
             android:name=".ListSesi"
-            android:label="List Sesi"
+            android:label="Pilih List Sesi"
             android:parentActivityName=".DosenActivity" />
         <activity
             android:name=".ListAbsen"
@@ -62,15 +62,24 @@
             android:parentActivityName=".DosenActivity" />
         <activity
             android:name=".ListKelas"
-            android:label="List Kelas"
+            android:label="Pilih List Kelas"
             android:parentActivityName=".HalamanMahasiswa" />
         <activity
             android:name=".ListIzin"
-            android:label="List Izin"
+            android:label="Pilih List Izin"
             android:parentActivityName=".HalamanMahasiswa" />
         <activity
             android:name=".IzinMahasiswa"
-            android:parentActivityName=".HalamanMahasiswa"></activity>
+            android:parentActivityName=".HalamanMahasiswa" />
+        <activity
+            android:name=".HalamanSesi"
+            android:parentActivityName=".DosenActivity" />
+        <activity android:name=".BukaSesiTanpaLokasi" />
+        <activity android:name=".HalamanSakit"></activity>
+        <activity
+            android:name=".ListSakit"
+            android:label="Pilih List Sakit"
+            android:parentActivityName=".HalamanMahasiswa" />
     </application>
 
 </manifest>

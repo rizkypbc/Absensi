@@ -6,9 +6,9 @@ package skripsi.rizky.absensi.network.config;
 
 public class Config {
 
-//    public static final String BASE_URL = "http://192.168.1.14";
+    public static final String BASE_URL = "http://192.168.43.212";
 
-    public static final String BASE_URL = "http://aksesblk-samarinda.com";
+//    public static final String BASE_URL = "http://aksesblk-samarinda.com";
 
     public static final String API_URL = BASE_URL + "/absensi";
 
@@ -22,9 +22,13 @@ public class Config {
 
     public static final String API_IZIN = API_URL + "/izinMahasiswa.php";
 
+    public static final String API_SAKIT = API_URL + "/sakitMahasiswa.php";
+
     public static final String API_GET_LOCATION = API_URL + "/getLocation.php";
 
     public static final String API_BUKA_SESI = API_URL + "/bukaSesi.php";
+
+    public static final String API_BUKA_SESI_TANPA_LOKASI = API_URL + "/bukaSesiTanpaLokasi.php";
 
     public static final String API_TUTUP_SESI = API_URL + "/UpdateSesi.php";
 

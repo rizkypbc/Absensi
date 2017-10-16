@@ -12,8 +12,8 @@ import skripsi.rizky.absensi.izin.DownloaderIzin;
 
 public class ListIzin extends AppCompatActivity {
 
-    //    static String urlAddress = "http://192.168.1.14/absensi/MataKuliah/viewSesi.php";
-    static String urlAddress = "http://aksesblk-samarinda.com/absensi/MataKuliah/viewSesiMahasiswa.php";
+    static String urlAddress = "http://192.168.43.212/absensi/MataKuliah/viewSesiMahasiswa.php";
+//    static String urlAddress = "http://aksesblk-samarinda.com/absensi/MataKuliah/viewSesiMahasiswa.php";
 
     public static void start(Context context) {
 

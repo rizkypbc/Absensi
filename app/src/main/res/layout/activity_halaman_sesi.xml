@@ -3,92 +3,58 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:windowSoftInputMode="adjustResize"
-    tools:context=".AbsenMahasiswaActivity">
+    tools:context=".DosenActivity">
 
     <LinearLayout
-        android:id="@+id/linearLayout1"
+        android:id="@+id/linearLayout3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="84dp"
+        android:layout_marginTop="130dp"
         android:orientation="vertical">
 
-
         <TextView
-            android:id="@+id/nim"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAlignment="center"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textColor="@color/colorText" />
-
-        <TextView
-            android:id="@+id/greeting"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:text="Pilih Cara Membuka Sesi"
             android:textAlignment="center"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textColor="@color/colorText"
-            android:textSize="30sp" />
+            android:textSize="25sp" />
+
 
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/linearLayout2"
+        android:id="@+id/layout_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/linearLayout1"
+        android:layout_below="@+id/linearLayout3"
         android:layout_marginTop="28dp"
         android:orientation="horizontal">
 
 
         <ImageView
-            android:id="@+id/btn_list_kelas"
+            android:id="@+id/btnBukaSesiLokasi"
             android:layout_width="120dp"
             android:layout_height="120dp"
             android:layout_marginLeft="20dp"
-            android:src="@drawable/absen" />
+            android:src="@drawable/icon_buka_sesi_lokasi" />
 
         <ImageView
-            android:id="@+id/btn_logout"
+            android:id="@+id/btnBukaTanpaLokasi"
             android:layout_width="120dp"
             android:layout_height="120dp"
             android:layout_marginLeft="70dp"
-            android:src="@drawable/logout" />
+            android:src="@drawable/icon_buka_sesi_tanpa" />
 
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/linearLayout3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/linearLayout2"
-        android:layout_marginTop="28dp"
-        android:orientation="horizontal">
-
-
-        <ImageView
-            android:id="@+id/btn_izin"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-            android:layout_marginLeft="20dp"
-            android:src="@drawable/izin" />
-
-
-        <ImageView
-            android:id="@+id/btn_sakit"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-            android:layout_marginLeft="70dp"
-            android:src="@drawable/icon_sakit" />
 
     </LinearLayout>
 

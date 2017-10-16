@@ -19,12 +19,12 @@ import skripsi.rizky.absensi.util.PrefUtilDosen;
 
 public class ListSesi extends AppCompatActivity {
 
-//    static String urlAddress = "http://192.168.1.14/absensi/MataKuliah/viewSesi.php?nama_dosen=";
+//    static String urlAddress = "http://192.168.43.212/absensi/MataKuliah/viewSesi.php?nama_dosen=";
 
-//    static String urlAddress = "http://192.168.1.14/absensi/MataKuliah/viewSesi.php";
+    static String urlAddress = "http://192.168.43.212/absensi/MataKuliah/viewSesi.php";
 
 
-    static String urlAddress = "http://aksesblk-samarinda.com/absensi/MataKuliah/viewSesi.php";
+//    static String urlAddress = "http://aksesblk-samarinda.com/absensi/MataKuliah/viewSesi.php";
 
 
     public static void start(Context context) {

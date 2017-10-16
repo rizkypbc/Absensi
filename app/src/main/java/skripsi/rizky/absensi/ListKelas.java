@@ -12,9 +12,9 @@ import skripsi.rizky.absensi.sesi.DownloaderSesi;
 
 public class ListKelas extends AppCompatActivity {
 
-//    static String urlAddress = "http://192.168.1.14/absensi/MataKuliah/viewSesi.php";
+    static String urlAddress = "http://192.168.43.212/absensi/MataKuliah/viewSesiMahasiswa.php";
 
-    static String urlAddress = "http://aksesblk-samarinda.com/absensi/MataKuliah/viewSesiMahasiswa.php";
+//    static String urlAddress = "http://aksesblk-samarinda.com/absensi/MataKuliah/viewSesiMahasiswa.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
