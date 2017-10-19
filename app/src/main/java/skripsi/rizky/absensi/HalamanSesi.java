@@ -14,7 +14,7 @@ public class HalamanSesi extends AppCompatActivity {
 
     public static void start(Context context) {
 
-        Intent intent = new Intent(context, DosenActivity.class);
+        Intent intent = new Intent(context, HalamanSesi.class);
         context.startActivity(intent);
     }
 

@@ -49,7 +49,7 @@ public class DosenActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                startActivity(new Intent(DosenActivity.this, ListAbsen.class));
+                startActivity(new Intent(DosenActivity.this, HalamanLiatSesi.class));
             }
         });
 

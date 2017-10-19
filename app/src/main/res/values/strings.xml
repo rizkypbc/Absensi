@@ -23,4 +23,9 @@
         <item>Dibuka</item>
         <item>Ditutup</item>
     </string-array>
+
+    <string-array name="token">
+        <item>Invalid</item>
+        <item>Valid</item>
+    </string-array>
 </resources>

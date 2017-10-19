@@ -32,6 +32,8 @@ public class Config {
 
     public static final String API_TUTUP_SESI = API_URL + "/UpdateSesi.php";
 
+    public static final String API_VERIFIKASI_ABSEN = API_URL + "/verifikasiAbsen.php";
+
     public static final String API_LIAT_SESI = API_URL + "/liatSesi.php";
 
     //    public static final String DATA_URL_ABSEN = "http://192.168.1.14/absensi/MataKuliah/jumlahAbsen.php";
@@ -42,4 +44,6 @@ public class Config {
     public static final String KEY_NAME_SAKIT = "sakit";
     public static final String JSON_ARRAY_SAKIT = "hasil";
 
+    public static final String KEY_NAME_IZIN = "izin";
+    public static final String JSON_ARRAY_IZIN = "hasil";
 }

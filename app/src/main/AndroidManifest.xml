@@ -75,11 +75,22 @@
             android:name=".HalamanSesi"
             android:parentActivityName=".DosenActivity" />
         <activity android:name=".BukaSesiTanpaLokasi" />
-        <activity android:name=".HalamanSakit"></activity>
+        <activity
+            android:name=".HalamanSakit"
+            android:parentActivityName=".ListSakit" />
         <activity
             android:name=".ListSakit"
             android:label="Pilih List Sakit"
             android:parentActivityName=".HalamanMahasiswa" />
+        <activity
+            android:name=".HalamanLiatSesi"
+            android:parentActivityName=".DosenActivity" />
+        <activity
+            android:name=".ListVerfikasiAbsen"
+            android:parentActivityName=".HalamanLiatSesi" />
+        <activity
+            android:name=".HalamanVerifikasi"
+            android:parentActivityName=".ListVerfikasiAbsen"></activity>
     </application>
 
 </manifest>
